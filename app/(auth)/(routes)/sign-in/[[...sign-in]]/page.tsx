@@ -5,7 +5,7 @@ export default function Page() {
     <SignIn
       appearance={{
         elements: {
-          formButtonPrimary: " bg-violet-800",
+          formButtonPrimary: " bg-[#720BDA]",
         },
       }}
     />
