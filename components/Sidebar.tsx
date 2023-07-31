@@ -75,7 +75,7 @@ const Sidebar = () => {
           <h1 className={cn("text-2xl mt-2", audiowide.className)}>Emden AI</h1>
         </Link>
         <div className="space-y-1">
-          {routes.map((route) => (
+          {routes.map((route, index) => (
             <Link
               href={route.href}
               key={route.href}
