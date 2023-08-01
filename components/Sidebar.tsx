@@ -26,7 +26,7 @@ const routes = [
     label: "Dashboard",
     icon: LayoutDashboard,
     href: "/dashboard",
-    color: "text-lime-500",
+    color: "text-indigo-500",
   },
   {
     label: "Image Generator",
@@ -89,7 +89,12 @@ const Sidebar = () => {
               )}
             >
               <div className="flex items-center flex-1">
-                <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
+                <route.icon
+                  className={cn(
+                    "h-5 w-5 mr-3",
+                    pathname === route.href ? "text-lime-500" : route.color
+                  )}
+                />
                 {route.label}
               </div>
             </Link>
