@@ -26,37 +26,37 @@ const routes = [
     label: "Dashboard",
     icon: LayoutDashboard,
     href: "/dashboard",
-    color: "text-indigo-500",
+    color: "text-[#B6FCFC]",
   },
   {
     label: "Image Generator",
     icon: ImageIcon,
     href: "/image",
-    color: "text-indigo-500",
+    color: "text-[#B6FCFC]",
   },
   {
     label: "Video Generator",
     icon: VideoIcon,
     href: "/video",
-    color: "text-indigo-500",
+    color: "text-[#B6FCFC]",
   },
   {
     label: "Music Generator",
     icon: Music,
     href: "/music",
-    color: "text-indigo-500",
+    color: "text-[#B6FCFC]",
   },
   {
     label: "Code Generator",
     icon: FileCode2,
     href: "/code",
-    color: "text-indigo-500",
+    color: "text-[#B6FCFC]",
   },
   {
     label: "Conversation",
     icon: MessageSquare,
     href: "/conversation",
-    color: "text-indigo-500",
+    color: "text-[#B6FCFC]",
   },
   {
     label: "Settings",
@@ -74,7 +74,11 @@ const Sidebar = () => {
           <div className=" relative w-12 h-12 mr-2">
             <Image fill src="/brandicon.svg" alt="brand" />
           </div>
-          <h1 className={cn("text-2xl mt-2", audiowide.className)}>Emden AI</h1>
+          <h1
+            className={cn("text-2xl mt-2 text-[#BF85F9]", audiowide.className)}
+          >
+            Emden AI
+          </h1>
         </Link>
         <div className="space-y-1">
           {routes.map((route, index) => (
@@ -92,7 +96,7 @@ const Sidebar = () => {
                 <route.icon
                   className={cn(
                     "h-5 w-5 mr-3",
-                    pathname === route.href ? "text-lime-500" : route.color
+                    pathname === route.href ? "text-[#BF85F9]" : route.color
                   )}
                 />
                 {route.label}

@@ -14,6 +14,8 @@ import { formSchema } from "./constants";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Loader } from "@/components/Loader";
+import { EmtyDataState } from "@/components/EmtyDataState";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -87,6 +89,16 @@ const ConversationPage = () => {
             </Form>
           </div>
           <div className="space-y-4 mt-4">
+            {isLoading && (
+              <div className="p-8 rounded-lg w-full bg-muted">
+                <Loader />
+              </div>
+            )}
+            {messages.length === 0 && !isLoading && (
+              <div className="mt-24">
+                <EmtyDataState label="Currently no data to show" />
+              </div>
+            )}
             <div className="flex flex-col-reverse gap-y-4">
               {messages.map((message) => (
                 <div key={message.content}>{message.content}</div>
