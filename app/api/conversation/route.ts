@@ -15,7 +15,7 @@ export async function POST(req: Request) {
         const { messages } = body;
 
         if(!userId) {
-            return new NextResponse("Unauthorized", {status: 500})
+            return new NextResponse("Unauthorized", {status: 401})
         }
 
         if(!configuration.apiKey) {
@@ -27,12 +27,12 @@ export async function POST(req: Request) {
         }
 
         const response = await openai.createChatCompletion({
-            model: "gpt-3-turbo",
+            model: "gpt-3.5-turbo",
             messages
         })
         
         return NextResponse.json(response.data.choices[0].message);
-        
+
     } catch(error) {
         console.log("[CONVERSATION_ERROR]", error);
         return new NextResponse("Internal Error", { status: 500})
